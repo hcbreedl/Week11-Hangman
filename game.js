@@ -10,5 +10,3 @@ var wordsArray = [
 ]
 
 exports.randomWord = wordsArray[Math.floor(Math.random()*wordsArray.length)];
-
-// console.log(randomWord);
