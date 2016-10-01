@@ -3,31 +3,33 @@
 
 var inquirer = require("inquirer");
 var fs = require('fs');
-var word = require('./game.js');
+var word = require('./word.js');
+// var letterJS = require('./letter.js');
+// var wordJS = require('./word.js');
 
 //-- Prompt User if they are ready to Play
 //-- Selecting Yes will run playGame() function
 //===============================================
-var ready = [
-    {
-      type: 'input',
-      name: 'ready',
-      message: 'Ready to play Hangman?',
-      default: 'y/n'
-    }
-];
+// var ready = [
+//     {
+//       type: 'input',
+//       name: 'ready',
+//       message: 'Ready to play Hangman?',
+//       default: 'y/n'
+//     }
+// ];
 
-var readyToPlay = function() {
-	inquirer.prompt(ready, function(answers) {
-	}).then(function (answers) {
-	    	if (answers.ready === 'y') {
-	    		playGame();
-	    	} else {
-	    		console.log('Umm... OK... Well when you are ready, run the file again!');
-	    	};
-	});
-}
-readyToPlay();
+// var readyToPlay = function() {
+// 	inquirer.prompt(ready, function(answers) {
+// 	}).then(function (answers) {
+// 	    	if (answers.ready === 'y') {
+// 	    		playGame();
+// 	    	} else {
+// 	    		console.log('Umm... OK... Well when you are ready, run the file again!');
+// 	    	};
+// 	});
+// }
+word.readyToPlay();
 //===============================================
 
 //-- Game Play -- 
@@ -64,7 +66,7 @@ var playGame = function() {
 
 	var guess = function() {
 			inquirer.prompt(userGuess, function(answers) {
-		}).then(function (answers) {
+			}).then(function (answers) {
 	//----------------------------------------------------
 
 			var win = 0;
@@ -119,6 +121,6 @@ var playGame = function() {
 			guess(); //-- Recursively running guess function	
 		});
 	};
-	
+
 	guess(); //-- Initial run of guess function in playGame function
 }
