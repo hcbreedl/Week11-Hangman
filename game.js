@@ -1,5 +1,3 @@
-//This file will randomly select a word for the player
-
 var wordsArray = [
 	['h','t','m','l'],
 	['c','s','s'],
